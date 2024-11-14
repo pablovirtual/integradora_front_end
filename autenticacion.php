@@ -1,18 +1,25 @@
 <?php 
+include 'data_base.php';
 
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+    $email = $_POST['usuario'];
+    $password = $_POST['contraseña'];
+
+    if(empty($email) || empty($password)){
+        echo "Por favor llena todos los campos";
+} else {
+    // ! me revisar esta parte del codigo
+    $stmt = $conn->prepare("SELECT * FROM usuarios_autorizados WHERE email = ? AND password = ?");
+    $stmt->bind_param("ss", $email, $password);
+    $stmt->execute();
+    $stmt->store_result();
+}
+
+if($stmt->num_rows > 0){
+    echo "Bienvenido";
+} else {
+    echo "Usuario o contraseña incorrectos";
+}
+}
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!--aqui se debe de hacer la autenticacion del usuario-->
-
-    <script src="/jquery-3.7.1.min.js"></script>
-    <script src="/script.js"></script>    
-</body>
-</html>
