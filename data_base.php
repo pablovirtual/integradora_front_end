@@ -12,6 +12,6 @@ if ($conn->connect_error) {
 die("Connection failed: " . $conn->connect_error);
 }
 // si la conexion es exitosa, se muestra un mensaje de exito
-echo "Connected successfully";
+//echo "Connected successfully";
 
 ?>

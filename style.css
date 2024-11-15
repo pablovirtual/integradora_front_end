@@ -71,3 +71,10 @@ font {
   padding: 5px;
   cursor: pointer;
 }
+
+h2{
+    text-align: center;
+    padding-top: 50px;
+    font-size: 35px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
