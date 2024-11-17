@@ -43,6 +43,7 @@ if (!$result) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,18 +53,17 @@ if (!$result) {
     <link rel="stylesheet" href="style.css">
     <title>Interfaz</title>
 </head>
+
 <body>
     <h2>Bienvenido <?php echo $_SESSION['usuario']; ?></h2>
 
-       <!--aqui debo de agregar  el apartado para agregar un nuevo elemento-->
-          <div class="agregar">
+    <!--aqui debo de agregar  el apartado para agregar un nuevo elemento-->
+    <div class="agregar">
         <h2>Agregar datos</h2>
         <div class="ui-widget ui-widget-content">
-            <input type="text" id="id_propietario" name="id_propietario" placeholder="ID Propietario">
             <input type="text" id="nombres" name="nombres" placeholder="Nombres">
             <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos">
             <input type="text" id="telefono" name="telefono" placeholder="Telefono">
-            <input type="text" id="id_casa" name="id_casa" placeholder="ID Casa">
             <input type="text" id="no_casa" name="no_casa" placeholder="No. Casa">
             <input type="text" id="direccion" name="direccion" placeholder="Direccion">
             <input type="text" id="estado" name="estado" placeholder="Estado">
@@ -72,12 +72,12 @@ if (!$result) {
         </div>
     </div>
     <!--aqui debe de terminal la tabla-->
-     <!-- input buscar--->
+    <!-- input buscar--->
     <h2>Buscar</h2>
     <div class="entradaBusqueda">
-           <input type="text" class="ui-widget ui-widget-content" id="buscar" name="busqueda" placeholder="Ingresa el dato" required />
-      <!--boton de busqueda-->
-      <button id="buscarDato" type="submit" class="ui-widget ui-accordion-content">Buscar</button>
+        <input type="text" class="ui-widget ui-widget-content" id="buscar" name="busqueda" placeholder="Ingresa el dato" required />
+        <!--boton de busqueda-->
+        <button id="buscarDato" type="submit" class="ui-widget ui-accordion-content">Buscar</button>
     </div>
     <!--tabla de informacion-->
     <div id="tabla_info">
@@ -114,7 +114,7 @@ if (!$result) {
                         echo "<td>" . $row['tipo_operacion'] . "</td>";
                         echo "<td><button class='editar' data-id='" . $row['casa_id'] . "'>Editar</button></td>";
                         echo "<td><button class='eliminar' data-id='" . $row['casa_id'] . "'>Eliminar</button></td>";
-               
+
                         echo "</tr>";
                     }
                 } else {
@@ -123,14 +123,21 @@ if (!$result) {
                 ?>
             </tbody>
             <tfoot>
-                <tr id="totalDeRegistros">Total de registros: </tr>
+            <th id="TotaldeRegistros">Total de registros</th>
+            </tr>
             </tfoot>
         </table>
     </div>
+    <form action="close_session.php" method="post">
+      <button type="submit" id="closesession">Cerrar sesión</button>
+    </form>
     <script src="./jquery-3.7.1.min.js"></script>
     <script src="./jquery-ui-1.14.1.custom/jquery-ui.js"></script>
-    <script src="/interaccion.js"></script>
+    <script src="/total_registros.js"></script>
+    <script src="/agregar_elemento.js"></script>
+   
 </body>
+
 </html>
 <?php
 $conn->close();

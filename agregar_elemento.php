@@ -4,13 +4,10 @@ require 'data_base.php';
 
 // variables para insertar datos
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $id_propietario = $_POST['id_propietario'];
     $nombres = $_POST['nombres'];
     $apellidos = $_POST['apellidos'];
     $telefono = $_POST['telefono'];
-    $id_casa = $_POST['id_casa'];
     $no_casa = $_POST['no_casa'];
-
     $direccion = $_POST['direccion'];
     $estado = $_POST['estado'];
     $tipo_operacion = $_POST['tipo_operacion'];
@@ -35,14 +32,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt = $conn->prepare("INSERT INTO casa (no_casa, direccion, estado, tipo_de_operacion, Id_propietario) VALUES (?, ?, ?, ?, ?)");
         $stmt->bind_param("issii", $no_casa, $direccion, $estado, $tipo_operacion_id, $propietario_id);
         $stmt->execute();
+        $casa_id = $conn->insert_id;
 
         // confirmar la transacción
         $conn->commit();
-        echo "Datos agregados correctamente";
+        echo json_encode([
+            "message" => "Datos agregados correctamente",
+            "propietario_id" => $propietario_id,
+            "casa_id" => $casa_id
+        ]);
     } catch (Exception $e) {
         // en caso de error, se revierte la transacción
         $conn->rollback();
-        echo "Error: " . $e->getMessage();
+        echo json_encode(["message" => "Error: " . $e->getMessage()]);
     }
 
     $stmt->close();
