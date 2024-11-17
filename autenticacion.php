@@ -9,6 +9,7 @@
 <body>
 <?php
 include 'data_base.php';
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['usuario'];
@@ -22,8 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
+            $_SESSION['usuario'] = $username;
             echo "Inicio de sesión exitoso.";
            header("location:interfaz.php");
+           exit();
         } else {
             echo "<h2>Nombre de usuario o contraseña incorrectos.</h2>";
         }

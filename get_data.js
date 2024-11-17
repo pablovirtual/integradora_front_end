@@ -21,6 +21,8 @@ $(document).ready(function() {
                         table += '<td>' + item.casa_direccion + '</td>';
                         table += '<td>' + item.casa_estado + '</td>';
                         table += '<td>' + item.tipo_operacion + '</td>';
+                        table += '<td><button class="editar">Editar</button></td>';
+                        table += '<td><button class="eliminar">Eliminar</button></td>';
                         table += '</tr>';
                     });
                     // Agregar la tabla al DOM

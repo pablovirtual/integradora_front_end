@@ -54,21 +54,50 @@ if (!$result) {
 </head>
 <body>
     <h2>Bienvenido <?php echo $_SESSION['usuario']; ?></h2>
+
+       <!--aqui debo de agregar  el apartado para agregar un nuevo elemento-->
+          <div class="agregar">
+        <h2>Agregar datos</h2>
+        <div class="ui-widget ui-widget-content">
+            <input type="text" id="id_propietario" name="id_propietario" placeholder="ID Propietario">
+            <input type="text" id="nombres" name="nombres" placeholder="Nombres">
+            <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos">
+            <input type="text" id="telefono" name="telefono" placeholder="Telefono">
+            <input type="text" id="id_casa" name="id_casa" placeholder="ID Casa">
+            <input type="text" id="no_casa" name="no_casa" placeholder="No. Casa">
+            <input type="text" id="direccion" name="direccion" placeholder="Direccion">
+            <input type="text" id="estado" name="estado" placeholder="Estado">
+            <input type="text" id="tipo_operacion" name="tipo_operacion" placeholder="Tipo de Operacion">
+            <button id="agregarElemento">Agregar</button>
+        </div>
+    </div>
+    <!--aqui debe de terminal la tabla-->
+     <!-- input buscar--->
+    <h2>Buscar</h2>
+    <div class="entradaBusqueda">
+           <input type="text" class="ui-widget ui-widget-content" id="buscar" name="busqueda" placeholder="Ingresa el dato" required />
+      <!--boton de busqueda-->
+      <button id="buscarDato" type="submit" class="ui-widget ui-accordion-content">Buscar</button>
+    </div>
+    <!--tabla de informacion-->
     <div id="tabla_info">
         <table class="ui-widget ui-widget-content">
             <thead class="ui-widget-header">
                 <tr>
-                    <th>Idpropietario</th>
+                    <th>Id propietario</th>
                     <th>Nombres</th>
                     <th>Apellidos</th>
                     <th>Telefono</th>
-                    <th>Idcasa</th>
+                    <th>Id casa</th>
                     <th>Numero de casa</th>
                     <th>Direccion</th>
                     <th>Estado</th>
                     <th>Tipo de operacion</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
                 </tr>
             </thead>
+            <!--cuerpo de la tabla-->
             <tbody id="tablaDatos" class="ui-widget-content">
                 <?php
                 if ($result->num_rows > 0) {
@@ -83,6 +112,9 @@ if (!$result) {
                         echo "<td>" . $row['casa_direccion'] . "</td>";
                         echo "<td>" . $row['casa_estado'] . "</td>";
                         echo "<td>" . $row['tipo_operacion'] . "</td>";
+                        echo "<td><button class='editar' data-id='" . $row['casa_id'] . "'>Editar</button></td>";
+                        echo "<td><button class='eliminar' data-id='" . $row['casa_id'] . "'>Eliminar</button></td>";
+               
                         echo "</tr>";
                     }
                 } else {
@@ -91,12 +123,13 @@ if (!$result) {
                 ?>
             </tbody>
             <tfoot>
-                <tr id="totalDeRegistros">Total de registros: <?php echo $result->num_rows; ?></tr>
+                <tr id="totalDeRegistros">Total de registros: </tr>
             </tfoot>
         </table>
     </div>
     <script src="./jquery-3.7.1.min.js"></script>
     <script src="./jquery-ui-1.14.1.custom/jquery-ui.js"></script>
+    <script src="/interaccion.js"></script>
 </body>
 </html>
 <?php
