@@ -10,14 +10,12 @@ $(document).ready(function(){
             var estado = $("#estado").val();
             var tipo_operacion = $("#tipo_operacion").val();
 
-            console.log("Datos capturados");
-            console.log("Nombres: " + nombres);
-            console.log("Apellidos: " + apellidos);
-            console.log("Telefono: " + telefono);
-            console.log("No. Casa: " + no_casa);
-            console.log("Direccion: " + direccion);
-            console.log("Estado: " + estado);
-            console.log("Tipo de operación: " + tipo_operacion);
+            // Validar que los campos no estén vacíos
+            if(!nombres || !apellidos || !telefono || !no_casa || !direccion || !estado || !tipo_operacion) {
+                alert("Por favor, llene todos los campos.");
+                return; // Salir de la función
+
+            }
 
             $.ajax({
                 url: "agregar_elemento.php",

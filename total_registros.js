@@ -1,7 +1,10 @@
 $(document).ready(function(){
     function TotaldeRegistros() {
-        var total = $("#TablaDatos tr").length;
+        var total = $("#tablaDatos tr").length;
         $("#TotaldeRegistros").text("Total de registros: " + total);
-      } 
-        TotaldeRegistros();
+    } 
+
+    TotaldeRegistros(); // Llamar a la función TotaldeRegistros() para que se ejecute al cargar la página
+
+   
 });

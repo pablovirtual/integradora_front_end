@@ -123,6 +123,7 @@ if (!$result) {
                 ?>
             </tbody>
             <tfoot>
+            <tr>
             <th id="TotaldeRegistros">Total de registros</th>
             </tr>
             </tfoot>
@@ -133,8 +134,8 @@ if (!$result) {
     </form>
     <script src="./jquery-3.7.1.min.js"></script>
     <script src="./jquery-ui-1.14.1.custom/jquery-ui.js"></script>
-    <script src="/total_registros.js"></script>
     <script src="/agregar_elemento.js"></script>
+    <script src="/total_registros.js"></script>
    
 </body>
 
