@@ -76,6 +76,7 @@ $(document).ready(function(){
         $("#direccion").val("");
         $("#estado").val("");
         $("#tipo_operacion").val("");
+        
     }
 
     agregarElemento();

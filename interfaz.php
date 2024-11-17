@@ -56,7 +56,8 @@ if (!$result) {
 
 <body>
     <h2>Bienvenido <?php echo $_SESSION['usuario']; ?></h2>
-
+    <!--boton para actualizar la tabla-->
+    <button id="ActualizarTabla" type="reset">Mostrar todos los registros</button>
     <!--aqui debo de agregar  el apartado para agregar un nuevo elemento-->
     <div class="agregar">
         <h2>Agregar datos</h2>
@@ -79,6 +80,8 @@ if (!$result) {
         <!--boton de busqueda-->
         <button id="buscarDato" type="submit" class="ui-widget ui-accordion-content">Buscar</button>
     </div>
+    <!--paginacion-->
+    <div id="paginationControls"></div> 
     <!--tabla de informacion-->
     <div id="tabla_info">
         <table class="ui-widget ui-widget-content">
@@ -136,6 +139,8 @@ if (!$result) {
     <script src="./jquery-ui-1.14.1.custom/jquery-ui.js"></script>
     <script src="/agregar_elemento.js"></script>
     <script src="/total_registros.js"></script>
+    <script src="/buscar_elemento.js"></script>
+    <script src="/paginacion.js"></script>
    
 </body>
 
