@@ -40,6 +40,11 @@
         <!--boton de ingreso-->
         <button class="btn_formulario" type="submit">Ingresar</button>
       </form>
+      <div class="credenciales">
+        <p>Usuario:pedro@udg</p>
+        <p>Contraseña:123</p>
+
+      </div>
     </div>
   </div>
 

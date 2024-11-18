@@ -33,6 +33,8 @@ font {
   padding-top: 60px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 20px;
+  width: 80%;
+  height: 100%;
 }
 
 .formulario {
@@ -60,17 +62,7 @@ font {
   margin: 2px;
 }
 
-.btn_formulario {
-  background-color: blue;
-  color: white;
-  border: solid 1px whitesmoke;
-  width: 100px;
-  height: 30px;
-  border-radius: 10px;
-  margin: 10px;
-  padding: 5px;
-  cursor: pointer;
-}
+
 
 h2{
     text-align: center;
@@ -117,4 +109,37 @@ th, td{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
     transition: transform 0.2s; /* Transición para el hover */
 }
+.credenciales{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: baseline;
+    padding: 1px;
+    margin: 2px;
+}
 
+input[type="text"]{
+    width: 100%;
+    padding: 12px 20px;
+    
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    
+}
+
+table , th, td{
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
