@@ -102,6 +102,7 @@ if (!$result) {
                 </tr>
             </thead>
             <!--cuerpo de la tabla-->
+           
             <tbody id="tablaDatos" class="ui-widget-content">
                 <?php
                 if ($result->num_rows > 0) {
@@ -116,9 +117,9 @@ if (!$result) {
                         echo "<td>" . $row['casa_direccion'] . "</td>";
                         echo "<td>" . $row['casa_estado'] . "</td>";
                         echo "<td>" . $row['tipo_operacion'] . "</td>";
-                        echo "<td>" . $row['operacion_id'] . "</td>"; // Corregir esta línea
-                        echo "<td><button class='editar' data-id='" . $row['operacion_id'] . "'>Editar</button></td>"; // Corregir esta línea
-                        echo "<td><button class='eliminar' data-id='" . $row['operacion_id'] . "'>Eliminar</button></td>"; // Corregir esta línea
+                        echo "<td>" . $row['operacion_id'] . "</td>"; 
+                        echo "<td><button class='editar' data-id='" . $row['operacion_id'] . "'>Editar</button></td>"; 
+                        echo "<td><button class='eliminar' data-id='" . $row['operacion_id'] . "'>Eliminar</button></td>"; 
                         echo "</tr>";
                     }
                 } else {
@@ -139,10 +140,12 @@ if (!$result) {
     <script src="./jquery-3.7.1.min.js"></script>
     <script src="./jquery-ui-1.14.1.custom/jquery-ui.js"></script>
     <script src="/agregar_elemento.js"></script>
-    <script src="/total_registros.js"></script>
+  
     <script src="/buscar_elemento.js"></script>
     <script src="/paginacion.js"></script>
     <script src="/editar_elemento.js"></script>
+    <script src="/total_registros.js"></script>
+    <script src="/eliminar_elemento.js"></script>
    
 </body>
 
