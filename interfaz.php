@@ -29,8 +29,8 @@ $sql = "SELECT
             c.estado AS casa_estado,
             t.Id_operacion AS operacion_id, 
             t.tipo_operacion AS tipo_operacion
-        FROM propietario p
-        JOIN casa c ON p.idpropietario = c.Id_propietario
+        FROM casa c
+        JOIN propietario p ON c.Id_propietario = p.idpropietario
         JOIN tipo_operacion t ON c.tipo_de_operacion = t.Id_operacion";
 
 // Ejecutar la consulta y verificar errores
@@ -96,6 +96,7 @@ if (!$result) {
                     <th>Direccion</th>
                     <th>Estado</th>
                     <th>Tipo de operacion</th>
+                    <th>Id operacion</th> <!-- Agregar esta línea -->
                     <th>Editar</th>
                     <th>Eliminar</th>
                 </tr>
@@ -115,13 +116,13 @@ if (!$result) {
                         echo "<td>" . $row['casa_direccion'] . "</td>";
                         echo "<td>" . $row['casa_estado'] . "</td>";
                         echo "<td>" . $row['tipo_operacion'] . "</td>";
-                        echo "<td><button class='editar' data-id='" . $row['casa_id'] . "'>Editar</button></td>";
-                        echo "<td><button class='eliminar' data-id='" . $row['casa_id'] . "'>Eliminar</button></td>";
-
+                        echo "<td>" . $row['operacion_id'] . "</td>"; // Corregir esta línea
+                        echo "<td><button class='editar' data-id='" . $row['operacion_id'] . "'>Editar</button></td>"; // Corregir esta línea
+                        echo "<td><button class='eliminar' data-id='" . $row['operacion_id'] . "'>Eliminar</button></td>"; // Corregir esta línea
                         echo "</tr>";
                     }
                 } else {
-                    echo "<tr><td colspan='9'>No se encontraron resultados.</td></tr>";
+                    echo "<tr><td colspan='12'>No se encontraron resultados.</td></tr>"; // Corregir el colspan
                 }
                 ?>
             </tbody>
@@ -141,6 +142,7 @@ if (!$result) {
     <script src="/total_registros.js"></script>
     <script src="/buscar_elemento.js"></script>
     <script src="/paginacion.js"></script>
+    <script src="/editar_elemento.js"></script>
    
 </body>
 
