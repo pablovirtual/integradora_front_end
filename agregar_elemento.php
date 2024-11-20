@@ -39,7 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo json_encode([
             "message" => "Datos agregados correctamente",
             "propietario_id" => $propietario_id,
-            "casa_id" => $casa_id
+            "casa_id" => $casa_id,
+            "operacion_id" => $tipo_operacion_id
         ]);
     } catch (Exception $e) {
         // en caso de error, se revierte la transacción
