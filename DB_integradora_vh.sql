@@ -1,3 +1,45 @@
+
+-- This SQL script creates and populates a database named `bdvh` with tables for managing house data, owners, operation types, and authorized users.
+
+-- Database creation and usage
+-- ---------------------------
+-- CREATE DATABASE IF NOT EXISTS `bdvh`: Creates the `bdvh` database if it does not already exist.
+-- USE `bdvh`: Selects the `bdvh` database for subsequent operations.
+
+-- Table: casa
+-- ------------
+-- DROP TABLE IF EXISTS `casa`: Drops the `casa` table if it exists.
+-- CREATE TABLE `casa`: Creates the `casa` table with columns for house ID, house number, address, state, operation type, and owner ID.
+-- PRIMARY KEY (`idcasa`): Sets `idcasa` as the primary key.
+-- FOREIGN KEY (`Id_propietario`): References `Idpropietario` in the `propietario` table.
+-- FOREIGN KEY (`tipo_de_operacion`): References `Id_operacion` in the `tipo_operacion` table.
+-- INSERT INTO `casa`: Inserts sample data into the `casa` table.
+
+-- Table: propietario
+-- -------------------
+-- DROP TABLE IF EXISTS `propietario`: Drops the `propietario` table if it exists.
+-- CREATE TABLE `propietario`: Creates the `propietario` table with columns for owner ID, first name, last name, and phone number.
+-- PRIMARY KEY (`Idpropietario`): Sets `Idpropietario` as the primary key.
+-- INSERT INTO `propietario`: Inserts sample data into the `propietario` table.
+
+-- Table: tipo_operacion
+-- ----------------------
+-- DROP TABLE IF EXISTS `tipo_operacion`: Drops the `tipo_operacion` table if it exists.
+-- CREATE TABLE `tipo_operacion`: Creates the `tipo_operacion` table with columns for operation ID and operation type.
+-- PRIMARY KEY (`Id_operacion`): Sets `Id_operacion` as the primary key.
+-- INSERT INTO `tipo_operacion`: Inserts sample data into the `tipo_operacion` table.
+
+-- Table: usuarios_autorizados
+-- ----------------------------
+-- DROP TABLE IF EXISTS `usuarios_autorizados`: Drops the `usuarios_autorizados` table if it exists.
+-- CREATE TABLE `usuarios_autorizados`: Creates the `usuarios_autorizados` table with columns for user ID, email, and password.
+-- PRIMARY KEY (`ID`): Sets `ID` as the primary key.
+-- INSERT INTO `usuarios_autorizados`: Inserts sample data into the `usuarios_autorizados` table.
+
+-- Additional settings and configurations
+-- ---------------------------------------
+-- Various settings and configurations are applied before and after the creation and population of tables, such as character sets, time zones, unique checks, foreign key checks, and SQL modes.
+
 CREATE DATABASE  IF NOT EXISTS `bdvh` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `bdvh`;
 -- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)

@@ -1,3 +1,33 @@
+/**
+ * 🗑️ eliminar_elemento.php
+ *
+ * Este script elimina registros de las tablas `casa`, `propietario` y `tipo_operacion` en la base de datos.
+ * 
+ * 📄 Instrucciones:
+ * - Este script debe ser llamado mediante una solicitud POST.
+ * - Se requiere un parámetro POST `id_operacion` que especifica la operación a eliminar.
+ * 
+ * 🔄 Proceso:
+ * 1. Inicia una transacción.
+ * 2. Obtiene el `Id_propietario` asociado a la operación.
+ * 3. Elimina el registro correspondiente en la tabla `casa`.
+ * 4. Elimina el registro correspondiente en la tabla `propietario`.
+ * 5. Elimina el registro correspondiente en la tabla `tipo_operacion`.
+ * 6. Confirma la transacción.
+ * 
+ * ⚠️ En caso de error:
+ * - Revertir la transacción.
+ * - Retornar un mensaje de error en formato JSON.
+ * 
+ * 📤 Respuesta:
+ * - En caso de éxito: `{"success": true}`
+ * - En caso de error: `{"success": false, "message": "Error: <mensaje_de_error>"}`
+ * 
+ * 📦 Dependencias:
+ * - `data_base.php`: Archivo que contiene la conexión a la base de datos.
+ * 
+ * @package Aplicación Web con JavaScript
+ */
 <?php
 include 'data_base.php';
 

@@ -1,3 +1,35 @@
+/**
+ * login.php
+ *
+ * This file contains the HTML and PHP code for the login page of the web application.
+ * It includes the necessary styles and scripts for the login form.
+ *
+ * @file login.php
+ * @date 2023-10-05
+ * @version 1.0
+ *
+ * @section DESCRIPTION
+ * This page allows users to enter their email and password to log in to the application.
+ * It includes a form with fields for email and password, and a submit button.
+ * The form data is sent to 'autenticacion.php' for authentication.
+ *
+ * @section DEPENDENCIES
+ * - jQuery UI (jquery-ui-1.14.1.custom)
+ * - Custom styles (style.css)
+ * - jQuery (jquery-3.7.1.min.js)
+ *
+ * @section USAGE
+ * 1. Open the login page in a web browser.
+ * 2. Enter your email and password in the respective fields.
+ * 3. Click the "Ingresar" button to submit the form.
+ *
+ * @section NOTES
+ * - The form uses the POST method to send data to 'autenticacion.php'.
+ * - Sample credentials are provided for testing purposes.
+ *
+ * @section AUTHOR
+ * - Your Name
+ */
 <!DOCTYPE html>
 <html lang="en">
 

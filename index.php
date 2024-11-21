@@ -1,5 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+/**
+ * 📄 index.php
+ * 
+ * 
+ * 🌐 This file contains the main HTML structure for the web application.
+ * 🌍 Language: Spanish (es)
+ * 
+ * 🛠️ Developed as part of the "Producto integrador" project for the "DESARROLLO FRONT END" course.
+ * 📅 Semester: CUARTO SEMESTRE
+ * 
+ * 📋 Description:
+ * This file serves as the entry point for the web application, setting up the basic HTML structure and language settings.
+ * 
+ * 📌 Note:
+ * Ensure that all necessary resources (CSS, JS, images) are correctly linked in this file.
+ */
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">

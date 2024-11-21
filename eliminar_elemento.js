@@ -1,5 +1,13 @@
+
 $(document).ready(function(){
     // Función para eliminar un elemento
+    /**
+     * Attaches an event listener to the table with id "tablaDatos" to handle the deletion of table rows.
+     * When an element with the class "eliminar" is clicked, it prompts the user for confirmation.
+     * If confirmed, it sends an AJAX POST request to "eliminar_elemento.php" with the id of the operation to delete.
+     * On successful deletion, it removes the corresponding row from the table and updates the total records.
+     * If there is an error, it displays an appropriate message.
+     */
     function eliminarElemento(){
         $("#tablaDatos").on("click", ".eliminar", function(){
             var idOperacion = $(this).data("id");

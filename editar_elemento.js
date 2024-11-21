@@ -1,4 +1,18 @@
+
 $(document).ready(function () {
+  /**
+   * 📋 Función para editar un elemento en la tabla de datos.
+   * 
+   * Esta función se activa cuando se hace clic en un botón con la clase "editar" dentro de la tabla con el ID "tablaDatos".
+   * Solicita al usuario que edite varios campos a través de prompts y luego envía una solicitud AJAX para actualizar el elemento en el servidor.
+   * Si la solicitud es exitosa, actualiza la fila correspondiente en la tabla con los nuevos valores.
+   * 
+   * ⚠️ Asegúrate de que todos los campos estén llenos antes de enviar la solicitud.
+   * 
+   * @function
+   * @name editarElemento
+   * @returns {void}
+   */
   function editarElemento() {
     $("#tablaDatos").on("click", ".editar", function () {
       var row = $(this).closest("tr");

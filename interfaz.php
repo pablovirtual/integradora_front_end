@@ -1,3 +1,39 @@
+/**
+ * 🌐 Interfaz de Aplicación Web con JavaScript
+ * 
+ * Este archivo PHP maneja la interfaz de usuario para una aplicación web que muestra y gestiona datos de propietarios y casas.
+ * 
+ * 📄 Incluye:
+ * - Verificación de sesión y autenticación de usuario.
+ * - Conexión a la base de datos y ejecución de consultas SQL.
+ * - Presentación de datos en una tabla HTML.
+ * - Funcionalidades para agregar, buscar, editar y eliminar registros.
+ * - Paginación y control de total de registros.
+ * 
+ * 📋 Funcionalidades:
+ * - Verificar si una sesión ya está activa y si el usuario está autenticado.
+ * - Establecer la conexión a la base de datos.
+ * - Ejecutar una consulta SQL para obtener datos de las tablas `casa`, `propietario` y `tipo_operacion`.
+ * - Mostrar los datos obtenidos en una tabla HTML.
+ * - Proporcionar una interfaz para agregar nuevos elementos.
+ * - Proporcionar una interfaz para buscar elementos.
+ * - Proporcionar botones para editar y eliminar registros.
+ * - Mostrar el total de registros.
+ * - Permitir al usuario cerrar sesión.
+ * 
+ * 📂 Archivos relacionados:
+ * - `data_base.php`: Archivo incluido para la conexión a la base de datos.
+ * - `login.php`: Redirección en caso de que el usuario no esté autenticado.
+ * - `close_session.php`: Archivo para cerrar la sesión del usuario.
+ * - `agregar_elemento.js`: Script para agregar nuevos elementos.
+ * - `buscar_elemento.js`: Script para buscar elementos.
+ * - `paginacion.js`: Script para la paginación.
+ * - `editar_elemento.js`: Script para editar elementos.
+ * - `total_registros.js`: Script para mostrar el total de registros.
+ * - `eliminar_elemento.js`: Script para eliminar elementos.
+ * 
+ * 📅 Última actualización: Noviembre 2024
+ */
 <?php
 include 'data_base.php';
 // Verificar si una sesión ya está activa

@@ -1,5 +1,25 @@
 $(document).ready(function () {
   // Función para agregar un nuevo elemento a la tabla
+  /**
+   * 📄 Function to add an element to the table by making an AJAX request.
+   * 
+   * This function is triggered when the "agregarElemento" button is clicked. It collects
+   * the values from the input fields, validates them, and sends them to the server via
+   * a POST request. If the server responds with a success message, the new element is 
+   * added to the table and the input fields are cleared.
+   * 
+   * @function agregarElemento
+   * @returns {void}
+   * 
+   * @example
+   * // Ensure jQuery is loaded and call the function to set up the event listener
+   * $(document).ready(function() {
+   *   agregarElemento();
+   * });
+   * 
+   * @throws Will alert the user if any input field is empty.
+   * @throws Will log an error message if the AJAX request fails.
+   */
   function agregarElemento() {
     $("#agregarElemento").on("click", function () {
       var nombres = $("#nombres").val();
